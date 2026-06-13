@@ -1,0 +1,40 @@
+<h2>Что строим прямо сейчас?</h2>
+<p class="subtitle">Это определит объём работы и что будет готово на выходе</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Только мобильное приложение</h3>
+      <p>React Native + Expo + TypeScript. AI и backend — заглушки/моки. Полный UI, навигация, все экраны. Запускается сразу на устройстве.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>Быстро</li><li>Можно показать инвесторам/пользователям</li><li>Легко итерировать дизайн</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>AI не работает реально</li><li>Backend — отдельная задача позже</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Приложение + Supabase + AI API</h3>
+      <p>React Native + Expo + Supabase (auth, БД, storage) + Claude/OpenAI API для AI-функций. Реально работающий продукт.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>Работающий MVP</li><li>Supabase — быстрый бэкенд без сервера</li><li>Реальный AI</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>Нужны API-ключи</li><li>Больше настройки</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Полный стек с кастомным бэкендом</h3>
+      <p>React Native + Node.js/Express backend + PostgreSQL + AI. Максимальный контроль, но значительно больше работы.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>Полный контроль</li><li>Масштабируемость</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>Долго</li><li>Нужен хостинг</li><li>Сложнее</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>

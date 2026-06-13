@@ -1,0 +1,71 @@
+<h2>AI Pipeline — Supabase Edge Functions</h2>
+<p class="subtitle">Раздел 3: Как работает обработка PDF и AI-функции</p>
+
+<div class="section">
+  <span class="label">Шаг 1 — Загрузка PDF</span>
+  <div style="display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap">
+    <div style="background:#1e293b;border-radius:8px;padding:10px 14px;font-size:12px;color:#a78bfa">📱 Пользователь выбирает PDF</div>
+    <div style="color:#6366f1;font-size:18px">→</div>
+    <div style="background:#1e293b;border-radius:8px;padding:10px 14px;font-size:12px;color:#34d399">Supabase Storage<br><span style="color:#64748b">pdfs/{user_id}/{file}</span></div>
+    <div style="color:#6366f1;font-size:18px">→</div>
+    <div style="background:#1e293b;border-radius:8px;padding:10px 14px;font-size:12px;color:#94a3b8">documents table<br><span style="color:#64748b">status: 'processing'</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Шаг 2 — Извлечение текста (Edge Function: process-pdf)</span>
+  <div style="background:#0f172a;border:1px solid #6366f1;border-radius:12px;padding:14px;margin-top:10px;font-size:12px;font-family:monospace;color:#94a3b8;line-height:1.8">
+    1. Скачивает PDF из Storage<br>
+    2. Извлекает текст (pdf-parse / pdfjs-dist)<br>
+    3. Определяет язык документа (langdetect)<br>
+    4. Сохраняет текст + язык в documents<br>
+    5. Обновляет status → 'ready'
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Шаг 3 — Генерация контента (4 Edge Functions)</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+    <div style="background:#0f172a;border:1px solid #34d399;border-radius:10px;padding:12px">
+      <div style="color:#34d399;font-size:12px;font-weight:700">generate-summary</div>
+      <div style="font-size:11px;color:#64748b;margin-top:4px">PDF text → Gemini Flash → конспект на нужном языке</div>
+    </div>
+    <div style="background:#0f172a;border:1px solid #fbbf24;border-radius:10px;padding:12px">
+      <div style="color:#fbbf24;font-size:12px;font-weight:700">generate-flashcards</div>
+      <div style="font-size:11px;color:#64748b;margin-top:4px">PDF text → Gemini Flash → N пар вопрос/ответ</div>
+    </div>
+    <div style="background:#0f172a;border:1px solid #f87171;border-radius:10px;padding:12px">
+      <div style="color:#f87171;font-size:12px;font-weight:700">generate-exam</div>
+      <div style="font-size:11px;color:#64748b;margin-top:4px">PDF text → Gemini Flash → MCQ вопросы с ответами</div>
+    </div>
+    <div style="background:#0f172a;border:1px solid #60a5fa;border-radius:10px;padding:12px">
+      <div style="color:#60a5fa;font-size:12px;font-weight:700">tutor-chat</div>
+      <div style="font-size:11px;color:#64748b;margin-top:4px">История + PDF контекст → Gemini Pro → ответ</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Модели Gemini</span>
+  <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
+    <div style="background:#1e293b;border-radius:8px;padding:10px 16px;font-size:12px">
+      <span style="color:#34d399">gemini-1.5-flash</span><br>
+      <span style="color:#64748b">Конспекты, flashcards, экзамены<br>Дёшево, быстро</span>
+    </div>
+    <div style="background:#1e293b;border-radius:8px;padding:10px 16px;font-size:12px">
+      <span style="color:#60a5fa">gemini-1.5-pro</span><br>
+      <span style="color:#64748b">AI Tutor чат<br>Умнее, чуть дороже</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Многоязычность</span>
+  <div style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px;margin-top:10px;font-size:12px;color:#94a3b8">
+    Каждый Edge Function принимает параметр <code style="color:#a78bfa">output_language</code>.<br>
+    Промпт содержит инструкцию отвечать на нужном языке.<br>
+    Поддержка: EN · RU · KY · KZ · TR · AR · DE · FR · ES
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:12px">AI pipeline выглядит правильно?</p>

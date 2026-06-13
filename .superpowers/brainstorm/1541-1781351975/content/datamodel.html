@@ -1,0 +1,85 @@
+<h2>База данных — Supabase (PostgreSQL)</h2>
+<p class="subtitle">Раздел 2: Таблицы и связи</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
+
+  <div style="background:#0f172a;border:1px solid #6366f1;border-radius:12px;padding:14px">
+    <div style="color:#6366f1;font-weight:700;font-size:13px;margin-bottom:8px">👤 profiles</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      id (uuid, FK → auth.users)<br>
+      full_name text<br>
+      avatar_url text<br>
+      language text (default 'en')<br>
+      created_at timestamptz
+    </div>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #6366f1;border-radius:12px;padding:14px">
+    <div style="color:#a78bfa;font-weight:700;font-size:13px;margin-bottom:8px">📄 documents</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      id uuid PK<br>
+      user_id uuid FK<br>
+      title text<br>
+      file_path text (Storage)<br>
+      language_detected text<br>
+      page_count int<br>
+      status text (processing/ready)<br>
+      created_at timestamptz
+    </div>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #34d399;border-radius:12px;padding:14px">
+    <div style="color:#34d399;font-weight:700;font-size:13px;margin-bottom:8px">📝 summaries</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      id uuid PK<br>
+      document_id uuid FK<br>
+      content text<br>
+      language text<br>
+      created_at timestamptz
+    </div>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #fbbf24;border-radius:12px;padding:14px">
+    <div style="color:#fbbf24;font-weight:700;font-size:13px;margin-bottom:8px">🃏 flashcard_sets + items</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      <span style="color:#fbbf24">flashcard_sets:</span><br>
+      id, document_id FK, title<br><br>
+      <span style="color:#fbbf24">flashcard_items:</span><br>
+      id, set_id FK, question,<br>
+      answer, difficulty (1-5)
+    </div>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #f87171;border-radius:12px;padding:14px">
+    <div style="color:#f87171;font-weight:700;font-size:13px;margin-bottom:8px">📝 exams + questions + attempts</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      <span style="color:#f87171">exams:</span> id, document_id<br>
+      <span style="color:#f87171">exam_questions:</span> id, exam_id,<br>
+      &nbsp;question, options[], correct<br>
+      <span style="color:#f87171">exam_attempts:</span> id, exam_id,<br>
+      &nbsp;user_id, score, answers[]
+    </div>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #60a5fa;border-radius:12px;padding:14px">
+    <div style="color:#60a5fa;font-weight:700;font-size:13px;margin-bottom:8px">🤖 tutor_sessions + messages</div>
+    <div style="font-size:11px;color:#94a3b8;line-height:1.9;font-family:monospace">
+      <span style="color:#60a5fa">tutor_sessions:</span><br>
+      id, user_id, document_id (opt)<br><br>
+      <span style="color:#60a5fa">tutor_messages:</span><br>
+      id, session_id FK, role<br>
+      (user/assistant), content
+    </div>
+  </div>
+
+</div>
+
+<div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:14px;margin-top:14px">
+  <div style="color:#94a3b8;font-weight:700;font-size:13px;margin-bottom:8px">📦 Supabase Storage Buckets</div>
+  <div style="display:flex;gap:12px;font-size:12px">
+    <div style="background:#1e293b;padding:8px 14px;border-radius:8px;color:#a78bfa">pdfs/ (private)</div>
+    <div style="background:#1e293b;padding:8px 14px;border-radius:8px;color:#34d399">avatars/ (public)</div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:16px">Модель данных выглядит правильно?</p>

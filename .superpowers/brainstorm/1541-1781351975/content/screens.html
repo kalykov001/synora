@@ -1,0 +1,85 @@
+<h2>Структура экранов — Synora</h2>
+<p class="subtitle">Expo Router (file-based navigation) · React Native + TypeScript</p>
+
+<div class="section">
+  <span class="label">Навигация</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+
+    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px">
+      <div style="color:#6366f1;font-weight:700;margin-bottom:10px;font-size:13px">📁 (auth)/</div>
+      <div style="font-size:12px;color:#94a3b8;line-height:2">
+        &nbsp;&nbsp;login.tsx<br>
+        &nbsp;&nbsp;register.tsx<br>
+        &nbsp;&nbsp;onboarding.tsx
+      </div>
+    </div>
+
+    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px">
+      <div style="color:#6366f1;font-weight:700;margin-bottom:10px;font-size:13px">📁 (app)/ — Tab Bar</div>
+      <div style="font-size:12px;color:#94a3b8;line-height:2">
+        &nbsp;&nbsp;index.tsx <span style="color:#4ade80">← Главный</span><br>
+        &nbsp;&nbsp;library/ → documents<br>
+        &nbsp;&nbsp;tutor/ → AI чат<br>
+        &nbsp;&nbsp;progress/ → статистика
+      </div>
+    </div>
+
+    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px">
+      <div style="color:#6366f1;font-weight:700;margin-bottom:10px;font-size:13px">📁 library/</div>
+      <div style="font-size:12px;color:#94a3b8;line-height:2">
+        &nbsp;&nbsp;index.tsx <span style="color:#94a3b8">← все PDF</span><br>
+        &nbsp;&nbsp;[id].tsx <span style="color:#94a3b8">← детали</span><br>
+        &nbsp;&nbsp;[id]/notes.tsx<br>
+        &nbsp;&nbsp;[id]/flashcards.tsx<br>
+        &nbsp;&nbsp;[id]/exam.tsx
+      </div>
+    </div>
+
+    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px">
+      <div style="color:#6366f1;font-weight:700;margin-bottom:10px;font-size:13px">📁 study/</div>
+      <div style="font-size:12px;color:#94a3b8;line-height:2">
+        &nbsp;&nbsp;flashcards/[id].tsx<br>
+        &nbsp;&nbsp;exam/[id].tsx<br>
+        &nbsp;&nbsp;exam/[id]/results.tsx
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Tab Bar (нижняя навигация)</span>
+  <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-top:12px;display:flex;justify-content:space-around;align-items:center">
+    <div style="text-align:center;color:#6366f1">
+      <div style="font-size:24px">🏠</div>
+      <div style="font-size:11px;margin-top:4px">Главная</div>
+    </div>
+    <div style="text-align:center;color:#6366f1">
+      <div style="font-size:24px">📚</div>
+      <div style="font-size:11px;margin-top:4px">Библиотека</div>
+    </div>
+    <div style="text-align:center;color:#6366f1">
+      <div style="font-size:24px">🤖</div>
+      <div style="font-size:11px;margin-top:4px">AI Tutor</div>
+    </div>
+    <div style="text-align:center;color:#6366f1">
+      <div style="font-size:24px">📊</div>
+      <div style="font-size:11px;margin-top:4px">Прогресс</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Главный экран (Home) — 1-2 нажатия до любой функции</span>
+  <div style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-top:12px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px;text-align:center">
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#a78bfa">📄<br>Upload PDF</div>
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#34d399">▶️<br>Continue</div>
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#60a5fa">🤖<br>AI Tutor</div>
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#fbbf24">🃏<br>Flashcards</div>
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#f87171">📝<br>Exam</div>
+      <div style="background:#1e293b;padding:10px;border-radius:8px;color:#94a3b8">📊<br>Progress</div>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:16px">Это базовая структура — выглядит правильно?</p>

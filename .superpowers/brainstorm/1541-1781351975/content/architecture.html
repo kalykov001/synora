@@ -1,0 +1,54 @@
+<h2>Архитектурный подход</h2>
+<p class="subtitle">Как соединить React Native, Supabase и Gemini</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Прямые вызовы из приложения</h3>
+      <p>Gemini API вызывается напрямую из React Native. Supabase — только для auth и БД.</p>
+      <div style="background:#1a1a2e;padding:12px;border-radius:8px;font-family:monospace;font-size:12px;color:#a0aec0;margin:8px 0">
+        📱 App → Gemini API (прямо)<br>
+        📱 App → Supabase (auth + данные)
+      </div>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>Проще всего</li><li>Нет промежуточного слоя</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>API ключ хранится в приложении ⚠️</li><li>Нет rate limiting</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Supabase Edge Functions (рекомендую)</h3>
+      <p>AI-запросы идут через Supabase Edge Functions (Deno). Ключи хранятся на сервере.</p>
+      <div style="background:#1a1a2e;padding:12px;border-radius:8px;font-family:monospace;font-size:12px;color:#a0aec0;margin:8px 0">
+        📱 App → Supabase Edge Fn → Gemini API<br>
+        📱 App → Supabase (auth + данные + PDF storage)
+      </div>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>API ключ защищён</li><li>Можно добавить rate limiting</li><li>Один провайдер (Supabase)</li><li>Удобно позже добавить монетизацию</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>Чуть сложнее деплой</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Отдельный Node.js бэкенд</h3>
+      <p>Express/Fastify сервер на Railway/Render. Полный контроль над логикой.</p>
+      <div style="background:#1a1a2e;padding:12px;border-radius:8px;font-family:monospace;font-size:12px;color:#a0aec0;margin:8px 0">
+        📱 App → Node.js API → Gemini API<br>
+        📱 App → Supabase (auth + данные)
+      </div>
+      <div class="pros-cons">
+        <div class="pros"><h4>+</h4><ul><li>Максимальный контроль</li><li>Любая логика</li></ul></div>
+        <div class="cons"><h4>−</h4><ul><li>Нужен отдельный хостинг</li><li>Больше инфраструктуры</li><li>Дольше</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:16px">Моя рекомендация: <strong>B</strong> — Edge Functions безопасны, просты и уже внутри Supabase</p>
