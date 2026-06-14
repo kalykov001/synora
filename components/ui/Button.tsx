@@ -22,7 +22,8 @@ export function Button({
   return (
     <Pressable
       testID={testID}
-      onPress={isDisabled ? undefined : onPress}
+      onPress={() => { if (!isDisabled) onPress() }}
+      accessibilityState={{ disabled: isDisabled }}
       className={[
         'rounded-xl px-6 py-4 items-center justify-center flex-row gap-2',
         variant === 'primary' && 'bg-primary',
