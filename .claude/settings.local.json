@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node -e \"const path = require\\('path'\\); const m = require.resolve\\('jest-mock', { paths: [path.join\\(process.cwd\\(\\), 'node_modules/jest-environment-node'\\)] }\\); console.log\\(m\\)\")",
+      "PowerShell(node -e \"const { TestEnvironment } = require\\('jest-environment-node'\\); const env = new TestEnvironment\\({}\\); console.log\\(typeof env.moduleMocker.clearMocksOnScope\\)\")",
+      "PowerShell(node -e \"const { ModuleMocker } = require\\('jest-mock'\\); const m = new ModuleMocker\\(global\\); console.log\\(typeof m.clearMocksOnScope\\)\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\USER\\\\Desktop\\\\synora-number2\\\\node_modules\\\\jest-environment-node\\\\node_modules\\\\jest-mock\\\\package.json\" | ForEach-Object { Get-Content $_.FullName | Select-String '\"version\"' | Select-Object -First 1 }; Get-ChildItem \"C:\\\\Users\\\\USER\\\\Desktop\\\\synora-number2\\\\node_modules\\\\jest-runner\\\\node_modules\\\\jest-mock\\\\package.json\" | ForEach-Object { Get-Content $_.FullName | Select-String '\"version\"' | Select-Object -First 1 })",
+      "PowerShell(node -e \"const p = require\\('./node_modules/jest-expo/jest-preset.js'\\); console.log\\(JSON.stringify\\(Object.fromEntries\\(Object.entries\\(p\\).filter\\(\\([k]\\) => k.includes\\('Mock'\\) || k.includes\\('module'\\)\\)\\), null, 2\\)\\)\" 2>&1)",
+      "PowerShell(node -e \"const p = require\\('./node_modules/jest-expo/jest-preset.js'\\); console.log\\(JSON.stringify\\(Object.fromEntries\\(Object.entries\\(p\\).filter\\(\\([k]\\) => !['transform','transformIgnorePatterns','moduleNameMapper','setupFiles','testEnvironment','resolver','haste'].includes\\(k\\)\\)\\), null, 2\\)\\)\" 2>&1)",
+      "PowerShell(node -e \"const p = require\\('./node_modules/jest-expo/jest-preset.js'\\); console.log\\(Object.keys\\(p\\)\\)\")",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\USER\\\\Desktop\\\\synora-number2\\\\node_modules\\\\jest-runtime\\\\build\\\\index.js\"; $indices = 0..\\($content.Length-1\\) | Where-Object { $content[$_] -match \"this\\\\.resetModules\\\\\\(\\\\\\)\" }; $indices | ForEach-Object { Write-Host \"Line $\\($_+1\\): $\\($content[$_]\\)\" })",
+      "PowerShell(node -e \"const { ModuleMocker } = require\\('./node_modules/jest-mock'\\); const m = new ModuleMocker\\(global\\); console.log\\('Version from package:', require\\('./node_modules/jest-mock/package.json'\\).version, 'Has clearMocksOnScope:', typeof m.clearMocksOnScope\\)\")",
+      "PowerShell(node -e \"const p = require\\('./node_modules/jest-expo/package.json'\\); const allDeps = {...\\(p.dependencies || {}\\), ...\\(p.devDependencies || {}\\)}; const jestRelated = Object.entries\\(allDeps\\).filter\\(\\([k]\\) => k.includes\\('jest'\\)\\); console.log\\(JSON.stringify\\(Object.fromEntries\\(jestRelated\\), null, 2\\)\\)\")"
+    ]
+  }
+}

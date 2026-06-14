@@ -1,6 +1,5 @@
 import '../global.css'
-// i18n is initialized in Task 12; import added here for when i18n/ is created
-// import '../i18n'
+import '../i18n'
 import { useEffect } from 'react'
 import { Stack, useRouter, useSegments } from 'expo-router'
 import { supabase } from '../lib/supabase'

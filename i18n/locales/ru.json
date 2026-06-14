@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Загрузка...", "error": "Что-то пошло не так", "retry": "Повторить", "cancel": "Отмена", "save": "Сохранить", "delete": "Удалить", "back": "Назад" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "AI-обучение", "login_button": "Войти",
+    "register_title": "Создать аккаунт", "register_subtitle": "Присоединяйся к Synora", "register_button": "Зарегистрироваться",
+    "email": "Email", "password": "Пароль", "name": "Имя",
+    "no_account": "Нет аккаунта?", "have_account": "Уже есть аккаунт?",
+    "sign_up_link": "Зарегистрироваться", "sign_in_link": "Войти",
+    "password_min": "Пароль должен быть минимум 6 символов"
+  },
+  "onboarding": { "title": "Выберите язык", "subtitle": "Язык интерфейса и AI-ответов", "continue": "Продолжить" },
+  "home": { "greeting": "Привет", "quick_access": "Быстрый доступ", "upload_pdf": "Upload PDF", "continue": "Продолжить", "ai_tutor": "AI Tutor", "flashcards": "Карточки", "exam": "Экзамен", "progress": "Прогресс" },
+  "library": { "title": "Библиотека", "empty": "Документов пока нет", "empty_hint": "Загрузите PDF чтобы начать" },
+  "tutor": { "title": "AI Tutor", "placeholder": "Спроси что угодно по материалу..." },
+  "progress": { "title": "Прогресс", "no_data": "Начни учиться чтобы увидеть прогресс" }
+}

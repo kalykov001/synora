@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Loading...", "error": "Something went wrong", "retry": "Retry", "cancel": "Cancel", "save": "Save", "delete": "Delete", "back": "Back" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "AI-powered learning", "login_button": "Sign In",
+    "register_title": "Create account", "register_subtitle": "Join Synora", "register_button": "Sign Up",
+    "email": "Email", "password": "Password", "name": "Name",
+    "no_account": "Don't have an account?", "have_account": "Already have an account?",
+    "sign_up_link": "Sign Up", "sign_in_link": "Sign In",
+    "password_min": "Password must be at least 6 characters"
+  },
+  "onboarding": { "title": "Choose Language", "subtitle": "Interface and AI response language", "continue": "Continue" },
+  "home": { "greeting": "Hello", "quick_access": "Quick Access", "upload_pdf": "Upload PDF", "continue": "Continue", "ai_tutor": "AI Tutor", "flashcards": "Flashcards", "exam": "Exam Mode", "progress": "Progress" },
+  "library": { "title": "Library", "empty": "No documents yet", "empty_hint": "Upload a PDF to get started" },
+  "tutor": { "title": "AI Tutor", "placeholder": "Ask anything about your material..." },
+  "progress": { "title": "Progress", "no_data": "Start learning to see your progress" }
+}
