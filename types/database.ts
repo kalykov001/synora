@@ -56,7 +56,7 @@ export interface ExamQuestion {
   exam_id: string
   question: string
   options: string[]
-  correct: number
+  correct_option: number
 }
 
 export interface ExamAttempt {
@@ -72,7 +72,9 @@ export interface TutorSession {
   id: string
   user_id: string
   document_id: string | null
+  title: string
   created_at: string
+  updated_at: string
 }
 
 export interface TutorMessage {

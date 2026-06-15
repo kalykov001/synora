@@ -65,11 +65,11 @@ CREATE TABLE exams (
 );
 
 CREATE TABLE exam_questions (
-  id       UUID  PRIMARY KEY DEFAULT gen_random_uuid(),
-  exam_id  UUID  NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
-  question TEXT  NOT NULL,
-  options  JSONB NOT NULL,
-  correct  INT   NOT NULL
+  id             UUID  PRIMARY KEY DEFAULT gen_random_uuid(),
+  exam_id        UUID  NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
+  question       TEXT  NOT NULL,
+  options        JSONB NOT NULL,
+  correct_option INT   NOT NULL
 );
 
 CREATE TABLE exam_attempts (
@@ -85,7 +85,9 @@ CREATE TABLE tutor_sessions (
   id          UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id     UUID        NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   document_id UUID        REFERENCES documents(id) ON DELETE SET NULL,
-  created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  title       TEXT        NOT NULL DEFAULT 'Новый чат',
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE tutor_messages (

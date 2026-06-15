@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Laden...", "error": "Etwas ist schiefgelaufen", "retry": "Wiederholen", "cancel": "Abbrechen", "save": "Speichern", "delete": "Löschen", "back": "Zurück" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "KI-gestütztes Lernen", "login_button": "Anmelden",
+    "register_title": "Konto erstellen", "register_subtitle": "Synora beitreten", "register_button": "Registrieren",
+    "email": "E-Mail", "password": "Passwort", "name": "Name",
+    "no_account": "Kein Konto?", "have_account": "Haben Sie bereits ein Konto?",
+    "sign_up_link": "Registrieren", "sign_in_link": "Anmelden",
+    "password_min": "Das Passwort muss mindestens 6 Zeichen haben"
+  },
+  "onboarding": { "title": "Sprache wählen", "subtitle": "Sprache der Benutzeroberfläche und KI-Antworten", "continue": "Weiter" },
+  "home": { "greeting": "Hallo", "quick_access": "Schnellzugriff", "upload_pdf": "PDF hochladen", "continue": "Weiter", "ai_tutor": "KI-Tutor", "flashcards": "Lernkarten", "exam": "Prüfungsmodus", "progress": "Fortschritt" },
+  "library": { "title": "Bibliothek", "empty": "Noch keine Dokumente", "empty_hint": "Lade eine PDF hoch um anzufangen" },
+  "tutor": { "title": "KI-Tutor", "placeholder": "Frag etwas über dein Material..." },
+  "progress": { "title": "Fortschritt", "no_data": "Beginne zu lernen um deinen Fortschritt zu sehen" }
+}

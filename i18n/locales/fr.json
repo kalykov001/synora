@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Chargement...", "error": "Une erreur s'est produite", "retry": "Réessayer", "cancel": "Annuler", "save": "Enregistrer", "delete": "Supprimer", "back": "Retour" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "Apprentissage assisté par IA", "login_button": "Se connecter",
+    "register_title": "Créer un compte", "register_subtitle": "Rejoindre Synora", "register_button": "S'inscrire",
+    "email": "Email", "password": "Mot de passe", "name": "Nom",
+    "no_account": "Pas de compte ?", "have_account": "Déjà un compte ?",
+    "sign_up_link": "S'inscrire", "sign_in_link": "Se connecter",
+    "password_min": "Le mot de passe doit contenir au moins 6 caractères"
+  },
+  "onboarding": { "title": "Choisir la langue", "subtitle": "Langue de l'interface et des réponses IA", "continue": "Continuer" },
+  "home": { "greeting": "Bonjour", "quick_access": "Accès rapide", "upload_pdf": "Télécharger PDF", "continue": "Continuer", "ai_tutor": "Tuteur IA", "flashcards": "Fiches", "exam": "Mode examen", "progress": "Progrès" },
+  "library": { "title": "Bibliothèque", "empty": "Aucun document", "empty_hint": "Téléchargez un PDF pour commencer" },
+  "tutor": { "title": "Tuteur IA", "placeholder": "Posez une question sur votre matière..." },
+  "progress": { "title": "Progrès", "no_data": "Commencez à apprendre pour voir vos progrès" }
+}

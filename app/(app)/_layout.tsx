@@ -53,6 +53,7 @@ export default function AppLayout() {
           tabBarIcon: ({ focused }) => <TabIcon emoji="📊" focused={focused} />,
         }}
       />
+      <Tabs.Screen name="study" options={{ href: null }} />
     </Tabs>
   )
 }

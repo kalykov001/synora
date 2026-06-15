@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Жүктөлүүдө...", "error": "Ката кетти", "retry": "Кайра", "cancel": "Жок", "save": "Сактоо", "delete": "Жок кылуу", "back": "Артка" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "AI менен үйрөнүү", "login_button": "Кирүү",
+    "register_title": "Аккаунт түзүү", "register_subtitle": "Synoraга кошулуу", "register_button": "Катталуу",
+    "email": "Email", "password": "Сырсөз", "name": "Аты",
+    "no_account": "Аккаунтуңуз жокпу?", "have_account": "Аккаунтуңуз барбы?",
+    "sign_up_link": "Катталуу", "sign_in_link": "Кирүү",
+    "password_min": "Сырсөз кем дегенде 6 белги болушу керек"
+  },
+  "onboarding": { "title": "Тил тандоо", "subtitle": "Интерфейс жана AI жооп тили", "continue": "Улантуу" },
+  "home": { "greeting": "Саламатсызбы", "quick_access": "Тез жетүү", "upload_pdf": "PDF жүктөө", "continue": "Улантуу", "ai_tutor": "AI Туторо", "flashcards": "Карточкалар", "exam": "Экзамен", "progress": "Прогресс" },
+  "library": { "title": "Китепкана", "empty": "Документтер жок", "empty_hint": "Баштоо үчүн PDF жүктөңүз" },
+  "tutor": { "title": "AI Туторо", "placeholder": "Материал боюнча суроо бериңиз..." },
+  "progress": { "title": "Прогресс", "no_data": "Прогрессти көрүү үчүн үйрөнүп баштаңыз" }
+}

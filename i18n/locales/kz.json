@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Жүктелуде...", "error": "Қате орын алды", "retry": "Қайтадан", "cancel": "Болдырмау", "save": "Сақтау", "delete": "Жою", "back": "Артқа" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "AI арқылы оқу", "login_button": "Кіру",
+    "register_title": "Аккаунт жасау", "register_subtitle": "Synoraға қосылу", "register_button": "Тіркелу",
+    "email": "Email", "password": "Құпия сөз", "name": "Аты",
+    "no_account": "Аккаунтыңыз жоқ па?", "have_account": "Аккаунтыңыз бар ма?",
+    "sign_up_link": "Тіркелу", "sign_in_link": "Кіру",
+    "password_min": "Құпия сөз кемінде 6 таңба болуы керек"
+  },
+  "onboarding": { "title": "Тіл таңдау", "subtitle": "Интерфейс және AI жауап тілі", "continue": "Жалғастыру" },
+  "home": { "greeting": "Сәлем", "quick_access": "Жылдам қол жеткізу", "upload_pdf": "PDF жүктеу", "continue": "Жалғастыру", "ai_tutor": "AI Тьютор", "flashcards": "Карточкалар", "exam": "Емтихан", "progress": "Прогресс" },
+  "library": { "title": "Кітапхана", "empty": "Құжаттар жоқ", "empty_hint": "Бастау үшін PDF жүктеңіз" },
+  "tutor": { "title": "AI Тьютор", "placeholder": "Материал бойынша сұрақ қойыңыз..." },
+  "progress": { "title": "Прогресс", "no_data": "Прогрессті көру үшін оқуды бастаңыз" }
+}

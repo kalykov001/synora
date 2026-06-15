@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Cargando...", "error": "Algo salió mal", "retry": "Reintentar", "cancel": "Cancelar", "save": "Guardar", "delete": "Eliminar", "back": "Volver" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "Aprendizaje con IA", "login_button": "Iniciar sesión",
+    "register_title": "Crear cuenta", "register_subtitle": "Unirse a Synora", "register_button": "Registrarse",
+    "email": "Correo", "password": "Contraseña", "name": "Nombre",
+    "no_account": "¿No tienes cuenta?", "have_account": "¿Ya tienes cuenta?",
+    "sign_up_link": "Registrarse", "sign_in_link": "Iniciar sesión",
+    "password_min": "La contraseña debe tener al menos 6 caracteres"
+  },
+  "onboarding": { "title": "Elegir idioma", "subtitle": "Idioma de la interfaz y respuestas de IA", "continue": "Continuar" },
+  "home": { "greeting": "Hola", "quick_access": "Acceso rápido", "upload_pdf": "Subir PDF", "continue": "Continuar", "ai_tutor": "Tutor IA", "flashcards": "Tarjetas", "exam": "Modo examen", "progress": "Progreso" },
+  "library": { "title": "Biblioteca", "empty": "Sin documentos", "empty_hint": "Sube un PDF para empezar" },
+  "tutor": { "title": "Tutor IA", "placeholder": "Pregunta algo sobre tu material..." },
+  "progress": { "title": "Progreso", "no_data": "Empieza a aprender para ver tu progreso" }
+}

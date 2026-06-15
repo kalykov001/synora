@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "Yükleniyor...", "error": "Bir hata oluştu", "retry": "Tekrar dene", "cancel": "İptal", "save": "Kaydet", "delete": "Sil", "back": "Geri" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "AI destekli öğrenme", "login_button": "Giriş Yap",
+    "register_title": "Hesap oluştur", "register_subtitle": "Synora'ya katıl", "register_button": "Kayıt Ol",
+    "email": "E-posta", "password": "Şifre", "name": "Ad",
+    "no_account": "Hesabınız yok mu?", "have_account": "Zaten hesabınız var mı?",
+    "sign_up_link": "Kayıt Ol", "sign_in_link": "Giriş Yap",
+    "password_min": "Şifre en az 6 karakter olmalıdır"
+  },
+  "onboarding": { "title": "Dil Seçin", "subtitle": "Arayüz ve AI yanıt dili", "continue": "Devam Et" },
+  "home": { "greeting": "Merhaba", "quick_access": "Hızlı Erişim", "upload_pdf": "PDF Yükle", "continue": "Devam Et", "ai_tutor": "AI Öğretmen", "flashcards": "Kartlar", "exam": "Sınav Modu", "progress": "İlerleme" },
+  "library": { "title": "Kütüphane", "empty": "Henüz belge yok", "empty_hint": "Başlamak için bir PDF yükleyin" },
+  "tutor": { "title": "AI Öğretmen", "placeholder": "Materyaliniz hakkında bir şey sorun..." },
+  "progress": { "title": "İlerleme", "no_data": "İlerlemenizi görmek için öğrenmeye başlayın" }
+}

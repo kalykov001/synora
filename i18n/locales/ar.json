@@ -1,0 +1,16 @@
+{
+  "common": { "loading": "جار التحميل...", "error": "حدث خطأ", "retry": "إعادة المحاولة", "cancel": "إلغاء", "save": "حفظ", "delete": "حذف", "back": "رجوع" },
+  "auth": {
+    "login_title": "Synora", "login_subtitle": "التعلم بالذكاء الاصطناعي", "login_button": "تسجيل الدخول",
+    "register_title": "إنشاء حساب", "register_subtitle": "انضم إلى Synora", "register_button": "إنشاء حساب",
+    "email": "البريد الإلكتروني", "password": "كلمة المرور", "name": "الاسم",
+    "no_account": "ليس لديك حساب؟", "have_account": "لديك حساب بالفعل؟",
+    "sign_up_link": "إنشاء حساب", "sign_in_link": "تسجيل الدخول",
+    "password_min": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل"
+  },
+  "onboarding": { "title": "اختر اللغة", "subtitle": "لغة الواجهة وردود الذكاء الاصطناعي", "continue": "متابعة" },
+  "home": { "greeting": "مرحباً", "quick_access": "وصول سريع", "upload_pdf": "رفع PDF", "continue": "متابعة", "ai_tutor": "المعلم الذكي", "flashcards": "البطاقات", "exam": "وضع الاختبار", "progress": "التقدم" },
+  "library": { "title": "المكتبة", "empty": "لا توجد مستندات", "empty_hint": "ارفع ملف PDF للبدء" },
+  "tutor": { "title": "المعلم الذكي", "placeholder": "اسأل عن المادة..." },
+  "progress": { "title": "التقدم", "no_data": "ابدأ التعلم لرؤية تقدمك" }
+}
