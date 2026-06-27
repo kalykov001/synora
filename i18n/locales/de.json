@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Laden...", "error": "Etwas ist schiefgelaufen", "retry": "Wiederholen", "cancel": "Abbrechen", "save": "Speichern", "delete": "Löschen", "back": "Zurück" },
+  "common": { "loading": "Laden...", "error": "Etwas ist schiefgelaufen", "retry": "Wiederholen", "cancel": "Abbrechen", "save": "Speichern", "delete": "Löschen", "back": "← Zurück" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "KI-gestütztes Lernen", "login_button": "Anmelden",
     "register_title": "Konto erstellen", "register_subtitle": "Synora beitreten", "register_button": "Registrieren",
@@ -9,8 +9,36 @@
     "password_min": "Das Passwort muss mindestens 6 Zeichen haben"
   },
   "onboarding": { "title": "Sprache wählen", "subtitle": "Sprache der Benutzeroberfläche und KI-Antworten", "continue": "Weiter" },
-  "home": { "greeting": "Hallo", "quick_access": "Schnellzugriff", "upload_pdf": "PDF hochladen", "continue": "Weiter", "ai_tutor": "KI-Tutor", "flashcards": "Lernkarten", "exam": "Prüfungsmodus", "progress": "Fortschritt" },
-  "library": { "title": "Bibliothek", "empty": "Noch keine Dokumente", "empty_hint": "Lade eine PDF hoch um anzufangen" },
-  "tutor": { "title": "KI-Tutor", "placeholder": "Frag etwas über dein Material..." },
-  "progress": { "title": "Fortschritt", "no_data": "Beginne zu lernen um deinen Fortschritt zu sehen" }
+  "home": { "greeting": "Hallo", "student": "Student", "quick_access": "Schnellzugriff", "upload_pdf": "PDF hochladen", "continue": "Weiter", "ai_tutor": "KI-Tutor", "flashcards": "Lernkarten", "exam": "Prüfungsmodus", "progress": "Fortschritt" },
+  "library": {
+    "title": "Bibliothek", "empty": "Noch keine Dokumente", "empty_hint": "Lade eine PDF hoch um anzufangen",
+    "empty_title": "Leer", "empty_hint2": "Lade eine PDF hoch um zu lernen",
+    "status_uploading": "Hochladen...", "status_processing": "KI verarbeitet...", "status_ready": "Fertig", "status_error": "Fehler",
+    "pages": "S.", "delete_title": "Dokument löschen?", "upload_error": "Uploadfehler"
+  },
+  "doc": {
+    "tab_summary": "Zusammenfassung", "tab_flashcards": "Lernkarten", "tab_exam": "Prüfung",
+    "processing": "Dokument wird verarbeitet...",
+    "generating_summary": "KI erstellt Zusammenfassung...",
+    "no_summary": "Noch keine Zusammenfassung", "no_summary_hint": "Die KI wird eine strukturierte Zusammenfassung erstellen",
+    "create_summary": "Zusammenfassung erstellen",
+    "create_flashcards": "Lernkarten erstellen", "new_set": "+ Neues Set", "tap_to_study": "Zum Lernen tippen",
+    "create_exam": "Prüfung erstellen", "new_exam": "+ Neue Prüfung", "tap_to_start": "Zum Starten tippen"
+  },
+  "tutor": {
+    "title": "KI-Tutor", "placeholder": "Frag etwas über dein Material...",
+    "new": "+ Neu", "new_chat": "Chat starten", "empty_hint": "Stelle Fragen zu deinen Dokumenten oder beliebigen Themen",
+    "input_placeholder": "Frag etwas...", "typing": "KI tippt...",
+    "chat_hint": "Stelle eine Frage — ich helfe bei jedem Thema"
+  },
+  "progress": {
+    "title": "Fortschritt", "no_data": "Beginne zu lernen um deinen Fortschritt zu sehen",
+    "subtitle": "Deine Lernstatistiken",
+    "stat_docs": "Dokumente", "stat_summaries": "Zusammenfassungen", "stat_flashcard_sets": "Lernkarten-Sets", "stat_exams": "Prüfungen",
+    "avg_score": "Durchschnittsergebnis", "last_attempts": "Versuchen", "recent": "Letzte Versuche", "attempt": "Versuch #",
+    "empty": "Noch nichts", "empty_hint2": "Lade Dokumente hoch und beginne zu lernen"
+  },
+  "settings": {
+    "title": "Einstellungen", "interface_lang": "Oberflächensprache", "ai_lang": "KI-Antwortsprache", "sign_out": "Abmelden"
+  }
 }

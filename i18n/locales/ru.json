@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Загрузка...", "error": "Что-то пошло не так", "retry": "Повторить", "cancel": "Отмена", "save": "Сохранить", "delete": "Удалить", "back": "Назад" },
+  "common": { "loading": "Загрузка...", "error": "Что-то пошло не так", "retry": "Повторить", "cancel": "Отмена", "save": "Сохранить", "delete": "Удалить", "back": "← Назад" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "AI-обучение", "login_button": "Войти",
     "register_title": "Создать аккаунт", "register_subtitle": "Присоединяйся к Synora", "register_button": "Зарегистрироваться",
@@ -9,8 +9,55 @@
     "password_min": "Пароль должен быть минимум 6 символов"
   },
   "onboarding": { "title": "Выберите язык", "subtitle": "Язык интерфейса и AI-ответов", "continue": "Продолжить" },
-  "home": { "greeting": "Привет", "quick_access": "Быстрый доступ", "upload_pdf": "Upload PDF", "continue": "Продолжить", "ai_tutor": "AI Tutor", "flashcards": "Карточки", "exam": "Экзамен", "progress": "Прогресс" },
-  "library": { "title": "Библиотека", "empty": "Документов пока нет", "empty_hint": "Загрузите PDF чтобы начать" },
-  "tutor": { "title": "AI Tutor", "placeholder": "Спроси что угодно по материалу..." },
-  "progress": { "title": "Прогресс", "no_data": "Начни учиться чтобы увидеть прогресс" }
+  "home": { "greeting": "Привет", "student": "Студент", "quick_access": "Быстрый доступ", "upload_pdf": "Upload PDF", "continue": "Продолжить", "ai_tutor": "AI Tutor", "flashcards": "Карточки", "exam": "Экзамен", "progress": "Прогресс" },
+  "library": {
+    "title": "Библиотека", "empty": "Документов пока нет", "empty_hint": "Загрузите PDF чтобы начать",
+    "empty_title": "Пусто", "empty_hint2": "Загрузи PDF чтобы начать учиться",
+    "status_uploading": "Загрузка...", "status_processing": "Обработка AI...", "status_ready": "Готово", "status_error": "Ошибка",
+    "pages": "стр.", "delete_title": "Удалить документ?", "upload_error": "Ошибка загрузки"
+  },
+  "doc": {
+    "tab_summary": "Конспект", "tab_flashcards": "Карточки", "tab_exam": "Экзамен",
+    "processing": "Документ обрабатывается...",
+    "generating_summary": "AI генерирует конспект...",
+    "no_summary": "Конспект не создан", "no_summary_hint": "AI сгенерирует структурированный конспект",
+    "create_summary": "Создать конспект",
+    "create_flashcards": "Создать карточки", "new_set": "+ Новый набор", "tap_to_study": "Нажми чтобы учить",
+    "create_exam": "Создать экзамен", "new_exam": "+ Новый экзамен", "tap_to_start": "Нажми чтобы начать"
+  },
+  "tutor": {
+    "title": "AI Tutor", "placeholder": "Спроси что угодно по материалу...",
+    "new": "+ Новый", "new_chat": "Начать чат", "empty_hint": "Задавай вопросы по своим документам или любым темам",
+    "input_placeholder": "Спроси что-нибудь...", "typing": "AI печатает...",
+    "chat_hint": "Задай вопрос — я помогу с любой темой"
+  },
+  "progress": {
+    "title": "Прогресс", "no_data": "Начни учиться чтобы увидеть прогресс",
+    "subtitle": "Твоя статистика обучения",
+    "stat_docs": "Документов", "stat_summaries": "Конспектов", "stat_flashcard_sets": "Наборов карточек", "stat_exams": "Экзаменов",
+    "avg_score": "Средний результат", "last_attempts": "попыткам", "recent": "Последние попытки", "attempt": "Попытка #",
+    "empty": "Пока пусто", "empty_hint2": "Загрузи документы и начни учиться"
+  },
+  "settings": {
+    "title": "Настройки", "interface_lang": "Язык интерфейса", "ai_lang": "Язык ответов AI", "sign_out": "Выйти из аккаунта",
+    "your_plan": "Ваш план", "upgrade_btn": "Улучшить до Pro"
+  },
+  "plan": {
+    "free": "Бесплатно", "pro": "Pro", "unlimited": "∞ Безлимит",
+    "day": "день", "docs": "документа", "back": "Назад",
+    "subtitle": "Безлимитный доступ ко всему",
+    "feature_docs": "Документы", "feature_summaries": "Конспекты", "feature_flashcards": "Карточки", "feature_exams": "Экзамены", "feature_ai": "AI Tutor сообщения",
+    "activate": "Активировать Pro (демо)",
+    "already_pro": "У вас уже Pro!",
+    "demo_note": "Это демо-версия. В реальном приложении здесь будет оплата.",
+    "limit_hit": "Лимит достигнут",
+    "limit_docs": "Бесплатный план: максимум {{count}} документа. Улучшите до Pro для безлимитного доступа.",
+    "limit_daily": "Бесплатный план: лимит на сегодня исчерпан. Улучшите до Pro для безлимитного доступа.",
+    "limit_messages": "Бесплатный план: {{count}} сообщений в день. Улучшите до Pro.",
+    "go_pro": "Перейти на Pro",
+    "per_month": "в месяц",
+    "subscribe": "Подписаться за $5.99/мес",
+    "cancel_anytime": "Отмена в любое время. Безопасная оплата через Stripe.",
+    "processing": "Оплата обрабатывается... Обновите если план не изменился."
+  }
 }

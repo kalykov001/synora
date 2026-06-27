@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Alert, ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { Link } from 'expo-router'
 import { supabase } from '../../lib/supabase'
 import { Button, Input } from '../../components/ui'
@@ -8,16 +8,18 @@ export default function LoginScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   async function handleLogin() {
+    setError('')
     if (!email.trim() || !password) return
     setLoading(true)
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error: err } = await supabase.auth.signInWithPassword({
       email: email.trim(),
       password,
     })
     setLoading(false)
-    if (error) Alert.alert('Ошибка входа', error.message)
+    if (err) setError(err.message)
   }
 
   return (
@@ -49,6 +51,9 @@ export default function LoginScreen() {
             placeholder="••••••••"
             secureTextEntry
           />
+          {!!error && (
+            <Text className="text-red-400 text-sm text-center">{error}</Text>
+          )}
           <Button label="Войти" onPress={handleLogin} loading={loading} />
         </View>
 

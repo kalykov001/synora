@@ -22,8 +22,8 @@ function applyLanguage(lang: string) {
 export const useSettingsStore = create<SettingsState>()(
   persist(
     (set) => ({
-      language: 'en',
-      outputLanguage: 'en',
+      language: 'ru',
+      outputLanguage: 'ru',
       setLanguage: (language) => {
         set({ language })
         applyLanguage(language)

@@ -43,7 +43,11 @@ export function useGenerateFlashcards(documentId: string) {
       const { data, error } = await supabase.functions.invoke('generate-flashcards', {
         body: { document_id: documentId, count, output_language: outputLanguage },
       })
-      if (error) throw error
+      if (error) {
+        const body = await (error as any).context?.json?.().catch(() => null)
+        console.error('generate-flashcards error:', JSON.stringify(body ?? error))
+        throw new Error(body?.error ?? error.message)
+      }
       return data
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ['flashcard_sets', documentId] }),

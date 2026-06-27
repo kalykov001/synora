@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Loading...", "error": "Something went wrong", "retry": "Retry", "cancel": "Cancel", "save": "Save", "delete": "Delete", "back": "Back" },
+  "common": { "loading": "Loading...", "error": "Something went wrong", "retry": "Retry", "cancel": "Cancel", "save": "Save", "delete": "Delete", "back": "← Back" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "AI-powered learning", "login_button": "Sign In",
     "register_title": "Create account", "register_subtitle": "Join Synora", "register_button": "Sign Up",
@@ -9,8 +9,55 @@
     "password_min": "Password must be at least 6 characters"
   },
   "onboarding": { "title": "Choose Language", "subtitle": "Interface and AI response language", "continue": "Continue" },
-  "home": { "greeting": "Hello", "quick_access": "Quick Access", "upload_pdf": "Upload PDF", "continue": "Continue", "ai_tutor": "AI Tutor", "flashcards": "Flashcards", "exam": "Exam Mode", "progress": "Progress" },
-  "library": { "title": "Library", "empty": "No documents yet", "empty_hint": "Upload a PDF to get started" },
-  "tutor": { "title": "AI Tutor", "placeholder": "Ask anything about your material..." },
-  "progress": { "title": "Progress", "no_data": "Start learning to see your progress" }
+  "home": { "greeting": "Hello", "student": "Student", "quick_access": "Quick Access", "upload_pdf": "Upload PDF", "continue": "Continue", "ai_tutor": "AI Tutor", "flashcards": "Flashcards", "exam": "Exam Mode", "progress": "Progress" },
+  "library": {
+    "title": "Library", "empty": "No documents yet", "empty_hint": "Upload a PDF to get started",
+    "empty_title": "Empty", "empty_hint2": "Upload a PDF to start learning",
+    "status_uploading": "Uploading...", "status_processing": "AI Processing...", "status_ready": "Ready", "status_error": "Error",
+    "pages": "p.", "delete_title": "Delete document?", "upload_error": "Upload error"
+  },
+  "doc": {
+    "tab_summary": "Summary", "tab_flashcards": "Flashcards", "tab_exam": "Exam",
+    "processing": "Document processing...",
+    "generating_summary": "AI generating summary...",
+    "no_summary": "No summary yet", "no_summary_hint": "AI will generate a structured summary",
+    "create_summary": "Create Summary",
+    "create_flashcards": "Create Flashcards", "new_set": "+ New Set", "tap_to_study": "Tap to study",
+    "create_exam": "Create Exam", "new_exam": "+ New Exam", "tap_to_start": "Tap to start"
+  },
+  "tutor": {
+    "title": "AI Tutor", "placeholder": "Ask anything about your material...",
+    "new": "+ New", "new_chat": "Start Chat", "empty_hint": "Ask questions about your documents or any topic",
+    "input_placeholder": "Ask something...", "typing": "AI is typing...",
+    "chat_hint": "Ask a question — I'll help with any topic"
+  },
+  "progress": {
+    "title": "Progress", "no_data": "Start learning to see your progress",
+    "subtitle": "Your learning statistics",
+    "stat_docs": "Documents", "stat_summaries": "Summaries", "stat_flashcard_sets": "Flashcard Sets", "stat_exams": "Exams",
+    "avg_score": "Average Score", "last_attempts": "attempts", "recent": "Recent Attempts", "attempt": "Attempt #",
+    "empty": "Nothing yet", "empty_hint2": "Upload documents and start learning"
+  },
+  "settings": {
+    "title": "Settings", "interface_lang": "Interface Language", "ai_lang": "AI Response Language", "sign_out": "Sign Out",
+    "your_plan": "Your Plan", "upgrade_btn": "Upgrade to Pro"
+  },
+  "plan": {
+    "free": "Free", "pro": "Pro", "unlimited": "∞ Unlimited",
+    "day": "day", "docs": "documents", "back": "Back",
+    "subtitle": "Unlimited access to everything",
+    "feature_docs": "Documents", "feature_summaries": "Summaries", "feature_flashcards": "Flashcards", "feature_exams": "Exams", "feature_ai": "AI Tutor messages",
+    "activate": "Activate Pro (demo)",
+    "already_pro": "You already have Pro!",
+    "demo_note": "This is a demo. In a real app, payment would be here.",
+    "limit_hit": "Limit reached",
+    "limit_docs": "Free plan: max {{count}} documents. Upgrade to Pro for unlimited access.",
+    "limit_daily": "Free plan: today's limit reached. Upgrade to Pro for unlimited access.",
+    "limit_messages": "Free plan: {{count}} messages per day. Upgrade to Pro.",
+    "go_pro": "Go Pro",
+    "per_month": "per month",
+    "subscribe": "Subscribe for $5.99/mo",
+    "cancel_anytime": "Cancel anytime. Secure payment via Stripe.",
+    "processing": "Payment processing... Refresh if plan hasn't updated."
+  }
 }

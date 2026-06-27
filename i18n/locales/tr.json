@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Yükleniyor...", "error": "Bir hata oluştu", "retry": "Tekrar dene", "cancel": "İptal", "save": "Kaydet", "delete": "Sil", "back": "Geri" },
+  "common": { "loading": "Yükleniyor...", "error": "Bir hata oluştu", "retry": "Tekrar dene", "cancel": "İptal", "save": "Kaydet", "delete": "Sil", "back": "← Geri" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "AI destekli öğrenme", "login_button": "Giriş Yap",
     "register_title": "Hesap oluştur", "register_subtitle": "Synora'ya katıl", "register_button": "Kayıt Ol",
@@ -9,8 +9,36 @@
     "password_min": "Şifre en az 6 karakter olmalıdır"
   },
   "onboarding": { "title": "Dil Seçin", "subtitle": "Arayüz ve AI yanıt dili", "continue": "Devam Et" },
-  "home": { "greeting": "Merhaba", "quick_access": "Hızlı Erişim", "upload_pdf": "PDF Yükle", "continue": "Devam Et", "ai_tutor": "AI Öğretmen", "flashcards": "Kartlar", "exam": "Sınav Modu", "progress": "İlerleme" },
-  "library": { "title": "Kütüphane", "empty": "Henüz belge yok", "empty_hint": "Başlamak için bir PDF yükleyin" },
-  "tutor": { "title": "AI Öğretmen", "placeholder": "Materyaliniz hakkında bir şey sorun..." },
-  "progress": { "title": "İlerleme", "no_data": "İlerlemenizi görmek için öğrenmeye başlayın" }
+  "home": { "greeting": "Merhaba", "student": "Öğrenci", "quick_access": "Hızlı Erişim", "upload_pdf": "PDF Yükle", "continue": "Devam Et", "ai_tutor": "AI Öğretmen", "flashcards": "Kartlar", "exam": "Sınav Modu", "progress": "İlerleme" },
+  "library": {
+    "title": "Kütüphane", "empty": "Henüz belge yok", "empty_hint": "Başlamak için bir PDF yükleyin",
+    "empty_title": "Boş", "empty_hint2": "Öğrenmeye başlamak için PDF yükleyin",
+    "status_uploading": "Yükleniyor...", "status_processing": "AI İşliyor...", "status_ready": "Hazır", "status_error": "Hata",
+    "pages": "s.", "delete_title": "Belge silinsin mi?", "upload_error": "Yükleme hatası"
+  },
+  "doc": {
+    "tab_summary": "Özet", "tab_flashcards": "Kartlar", "tab_exam": "Sınav",
+    "processing": "Belge işleniyor...",
+    "generating_summary": "AI özet oluşturuyor...",
+    "no_summary": "Henüz özet yok", "no_summary_hint": "AI yapılandırılmış bir özet oluşturacak",
+    "create_summary": "Özet Oluştur",
+    "create_flashcards": "Kart Oluştur", "new_set": "+ Yeni Set", "tap_to_study": "Çalışmak için dokun",
+    "create_exam": "Sınav Oluştur", "new_exam": "+ Yeni Sınav", "tap_to_start": "Başlamak için dokun"
+  },
+  "tutor": {
+    "title": "AI Öğretmen", "placeholder": "Materyaliniz hakkında bir şey sorun...",
+    "new": "+ Yeni", "new_chat": "Sohbet Başlat", "empty_hint": "Belgeleriniz veya herhangi bir konu hakkında sorular sorun",
+    "input_placeholder": "Bir şey sor...", "typing": "AI yazıyor...",
+    "chat_hint": "Soru sor — her konuda yardımcı olurum"
+  },
+  "progress": {
+    "title": "İlerleme", "no_data": "İlerlemenizi görmek için öğrenmeye başlayın",
+    "subtitle": "Öğrenme istatistikleriniz",
+    "stat_docs": "Belgeler", "stat_summaries": "Özetler", "stat_flashcard_sets": "Kart Setleri", "stat_exams": "Sınavlar",
+    "avg_score": "Ortalama Puan", "last_attempts": "denemede", "recent": "Son Denemeler", "attempt": "Deneme #",
+    "empty": "Henüz yok", "empty_hint2": "Belge yükleyin ve öğrenmeye başlayın"
+  },
+  "settings": {
+    "title": "Ayarlar", "interface_lang": "Arayüz Dili", "ai_lang": "AI Yanıt Dili", "sign_out": "Çıkış Yap"
+  }
 }

@@ -13,6 +13,13 @@ export function useDocuments() {
       if (error) throw error
       return data as Document[]
     },
+    refetchInterval: (query) => {
+      const docs = query.state.data
+      const hasProcessing = docs?.some(
+        (d) => d.status === 'uploading' || d.status === 'processing'
+      )
+      return hasProcessing ? 3000 : false
+    },
   })
 }
 
@@ -41,8 +48,16 @@ export function useDeleteDocument() {
   const qc = useQueryClient()
   return useMutation({
     mutationFn: async (id: string) => {
+      const { data: doc } = await supabase
+        .from('documents')
+        .select('file_path')
+        .eq('id', id)
+        .single()
       const { error } = await supabase.from('documents').delete().eq('id', id)
       if (error) throw error
+      if (doc?.file_path) {
+        await supabase.storage.from('pdfs').remove([doc.file_path])
+      }
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ['documents'] }),
   })

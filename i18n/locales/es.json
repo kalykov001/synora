@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Cargando...", "error": "Algo salió mal", "retry": "Reintentar", "cancel": "Cancelar", "save": "Guardar", "delete": "Eliminar", "back": "Volver" },
+  "common": { "loading": "Cargando...", "error": "Algo salió mal", "retry": "Reintentar", "cancel": "Cancelar", "save": "Guardar", "delete": "Eliminar", "back": "← Volver" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "Aprendizaje con IA", "login_button": "Iniciar sesión",
     "register_title": "Crear cuenta", "register_subtitle": "Unirse a Synora", "register_button": "Registrarse",
@@ -9,8 +9,36 @@
     "password_min": "La contraseña debe tener al menos 6 caracteres"
   },
   "onboarding": { "title": "Elegir idioma", "subtitle": "Idioma de la interfaz y respuestas de IA", "continue": "Continuar" },
-  "home": { "greeting": "Hola", "quick_access": "Acceso rápido", "upload_pdf": "Subir PDF", "continue": "Continuar", "ai_tutor": "Tutor IA", "flashcards": "Tarjetas", "exam": "Modo examen", "progress": "Progreso" },
-  "library": { "title": "Biblioteca", "empty": "Sin documentos", "empty_hint": "Sube un PDF para empezar" },
-  "tutor": { "title": "Tutor IA", "placeholder": "Pregunta algo sobre tu material..." },
-  "progress": { "title": "Progreso", "no_data": "Empieza a aprender para ver tu progreso" }
+  "home": { "greeting": "Hola", "student": "Estudiante", "quick_access": "Acceso rápido", "upload_pdf": "Subir PDF", "continue": "Continuar", "ai_tutor": "Tutor IA", "flashcards": "Tarjetas", "exam": "Modo examen", "progress": "Progreso" },
+  "library": {
+    "title": "Biblioteca", "empty": "Sin documentos", "empty_hint": "Sube un PDF para empezar",
+    "empty_title": "Vacío", "empty_hint2": "Sube un PDF para empezar a aprender",
+    "status_uploading": "Subiendo...", "status_processing": "IA procesando...", "status_ready": "Listo", "status_error": "Error",
+    "pages": "p.", "delete_title": "¿Eliminar documento?", "upload_error": "Error al subir"
+  },
+  "doc": {
+    "tab_summary": "Resumen", "tab_flashcards": "Tarjetas", "tab_exam": "Examen",
+    "processing": "Procesando documento...",
+    "generating_summary": "IA generando resumen...",
+    "no_summary": "Sin resumen aún", "no_summary_hint": "La IA generará un resumen estructurado",
+    "create_summary": "Crear resumen",
+    "create_flashcards": "Crear tarjetas", "new_set": "+ Nuevo conjunto", "tap_to_study": "Toca para estudiar",
+    "create_exam": "Crear examen", "new_exam": "+ Nuevo examen", "tap_to_start": "Toca para empezar"
+  },
+  "tutor": {
+    "title": "Tutor IA", "placeholder": "Pregunta algo sobre tu material...",
+    "new": "+ Nuevo", "new_chat": "Iniciar chat", "empty_hint": "Haz preguntas sobre tus documentos o cualquier tema",
+    "input_placeholder": "Pregunta algo...", "typing": "IA escribiendo...",
+    "chat_hint": "Haz una pregunta — te ayudo con cualquier tema"
+  },
+  "progress": {
+    "title": "Progreso", "no_data": "Empieza a aprender para ver tu progreso",
+    "subtitle": "Tus estadísticas de aprendizaje",
+    "stat_docs": "Documentos", "stat_summaries": "Resúmenes", "stat_flashcard_sets": "Conjuntos de tarjetas", "stat_exams": "Exámenes",
+    "avg_score": "Puntuación media", "last_attempts": "intentos", "recent": "Últimos intentos", "attempt": "Intento #",
+    "empty": "Nada aún", "empty_hint2": "Sube documentos y empieza a aprender"
+  },
+  "settings": {
+    "title": "Ajustes", "interface_lang": "Idioma de interfaz", "ai_lang": "Idioma de respuestas IA", "sign_out": "Cerrar sesión"
+  }
 }

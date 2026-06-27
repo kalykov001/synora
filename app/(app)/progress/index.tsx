@@ -1,4 +1,5 @@
 import { ScrollView, Text, View, ActivityIndicator } from 'react-native'
+import { useTranslation } from 'react-i18next'
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '../../../lib/supabase'
 
@@ -42,13 +43,14 @@ function StatCard({ label, value, icon }: { label: string; value: string | numbe
 }
 
 export default function ProgressScreen() {
+  const { t } = useTranslation()
   const { data: stats, isLoading } = useProgressStats()
 
   return (
     <View className="flex-1 bg-surface">
       <View className="px-6 pt-16 pb-4">
-        <Text className="text-2xl font-bold text-white">Прогресс</Text>
-        <Text className="text-gray-500 text-sm mt-1">Твоя статистика обучения</Text>
+        <Text className="text-2xl font-bold text-white">{t('progress.title')}</Text>
+        <Text className="text-gray-500 text-sm mt-1">{t('progress.subtitle')}</Text>
       </View>
 
       {isLoading ? (
@@ -57,32 +59,31 @@ export default function ProgressScreen() {
         </View>
       ) : (
         <ScrollView className="flex-1 px-6" contentContainerStyle={{ paddingBottom: 32 }}>
-          {/* Stats grid */}
           <View className="flex-row gap-3 mb-3">
-            <StatCard label="Документов" value={stats?.totalDocs ?? 0} icon="📄" />
-            <StatCard label="Конспектов" value={stats?.summaries ?? 0} icon="📝" />
+            <StatCard label={t('progress.stat_docs')} value={stats?.totalDocs ?? 0} icon="📄" />
+            <StatCard label={t('progress.stat_summaries')} value={stats?.summaries ?? 0} icon="📝" />
           </View>
           <View className="flex-row gap-3 mb-6">
-            <StatCard label="Наборов карточек" value={stats?.flashcardSets ?? 0} icon="🃏" />
-            <StatCard label="Экзаменов" value={stats?.exams ?? 0} icon="📋" />
+            <StatCard label={t('progress.stat_flashcard_sets')} value={stats?.flashcardSets ?? 0} icon="🃏" />
+            <StatCard label={t('progress.stat_exams')} value={stats?.exams ?? 0} icon="📋" />
           </View>
 
-          {/* Average score */}
           {stats?.avgScore != null && (
             <View className="bg-primary/20 border border-primary/40 rounded-2xl p-5 mb-6 items-center">
-              <Text className="text-gray-300 text-sm mb-1">Средний результат</Text>
+              <Text className="text-gray-300 text-sm mb-1">{t('progress.avg_score')}</Text>
               <Text className="text-white font-bold text-5xl">{stats.avgScore}%</Text>
-              <Text className="text-gray-400 text-xs mt-1">по последним {stats.attempts.length} попыткам</Text>
+              <Text className="text-gray-400 text-xs mt-1">
+                {t('progress.recent')} {stats.attempts.length} {t('progress.last_attempts')}
+              </Text>
             </View>
           )}
 
-          {/* Recent attempts */}
           {stats?.attempts && stats.attempts.length > 0 && (
             <View>
-              <Text className="text-white font-semibold text-base mb-3">Последние попытки</Text>
+              <Text className="text-white font-semibold text-base mb-3">{t('progress.recent')}</Text>
               {stats.attempts.slice(0, 10).map((a: { score: number }, i: number) => (
                 <View key={i} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 mb-2 flex-row justify-between items-center">
-                  <Text className="text-gray-300 text-sm">Попытка #{i + 1}</Text>
+                  <Text className="text-gray-300 text-sm">{t('progress.attempt')}{i + 1}</Text>
                   <View className={[
                     'rounded-lg px-3 py-1',
                     a.score >= 80 ? 'bg-green-500/20' : a.score >= 60 ? 'bg-yellow-500/20' : 'bg-red-500/20',
@@ -100,8 +101,8 @@ export default function ProgressScreen() {
           {!stats?.totalDocs && (
             <View className="items-center py-12">
               <Text className="text-5xl mb-4">📊</Text>
-              <Text className="text-white font-bold text-lg mb-2">Пока пусто</Text>
-              <Text className="text-gray-400 text-center">Загрузи документы и начни учиться</Text>
+              <Text className="text-white font-bold text-lg mb-2">{t('progress.empty')}</Text>
+              <Text className="text-gray-400 text-center">{t('progress.empty_hint2')}</Text>
             </View>
           )}
         </ScrollView>

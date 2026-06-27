@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Жүктелуде...", "error": "Қате орын алды", "retry": "Қайтадан", "cancel": "Болдырмау", "save": "Сақтау", "delete": "Жою", "back": "Артқа" },
+  "common": { "loading": "Жүктелуде...", "error": "Қате орын алды", "retry": "Қайтадан", "cancel": "Болдырмау", "save": "Сақтау", "delete": "Жою", "back": "← Артқа" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "AI арқылы оқу", "login_button": "Кіру",
     "register_title": "Аккаунт жасау", "register_subtitle": "Synoraға қосылу", "register_button": "Тіркелу",
@@ -9,8 +9,36 @@
     "password_min": "Құпия сөз кемінде 6 таңба болуы керек"
   },
   "onboarding": { "title": "Тіл таңдау", "subtitle": "Интерфейс және AI жауап тілі", "continue": "Жалғастыру" },
-  "home": { "greeting": "Сәлем", "quick_access": "Жылдам қол жеткізу", "upload_pdf": "PDF жүктеу", "continue": "Жалғастыру", "ai_tutor": "AI Тьютор", "flashcards": "Карточкалар", "exam": "Емтихан", "progress": "Прогресс" },
-  "library": { "title": "Кітапхана", "empty": "Құжаттар жоқ", "empty_hint": "Бастау үшін PDF жүктеңіз" },
-  "tutor": { "title": "AI Тьютор", "placeholder": "Материал бойынша сұрақ қойыңыз..." },
-  "progress": { "title": "Прогресс", "no_data": "Прогрессті көру үшін оқуды бастаңыз" }
+  "home": { "greeting": "Сәлем", "student": "Студент", "quick_access": "Жылдам қол жеткізу", "upload_pdf": "PDF жүктеу", "continue": "Жалғастыру", "ai_tutor": "AI Тьютор", "flashcards": "Карточкалар", "exam": "Емтихан", "progress": "Прогресс" },
+  "library": {
+    "title": "Кітапхана", "empty": "Құжаттар жоқ", "empty_hint": "Бастау үшін PDF жүктеңіз",
+    "empty_title": "Бос", "empty_hint2": "Оқу үшін PDF жүктеңіз",
+    "status_uploading": "Жүктелуде...", "status_processing": "AI өңдеуде...", "status_ready": "Дайын", "status_error": "Қате",
+    "pages": "б.", "delete_title": "Құжатты жою?", "upload_error": "Жүктеу қатесі"
+  },
+  "doc": {
+    "tab_summary": "Конспект", "tab_flashcards": "Карточкалар", "tab_exam": "Емтихан",
+    "processing": "Құжат өңделуде...",
+    "generating_summary": "AI конспект жасауда...",
+    "no_summary": "Конспект жоқ", "no_summary_hint": "AI құрылымдық конспект жасайды",
+    "create_summary": "Конспект жасау",
+    "create_flashcards": "Карточка жасау", "new_set": "+ Жаңа жиын", "tap_to_study": "Оқу үшін басыңыз",
+    "create_exam": "Емтихан жасау", "new_exam": "+ Жаңа емтихан", "tap_to_start": "Бастау үшін басыңыз"
+  },
+  "tutor": {
+    "title": "AI Тьютор", "placeholder": "Материал бойынша сұрақ қойыңыз...",
+    "new": "+ Жаңа", "new_chat": "Чат бастау", "empty_hint": "Құжаттарыңыз немесе кез келген тақырып бойынша сұрақ қойыңыз",
+    "input_placeholder": "Бір нәрсе сұрау...", "typing": "AI жазып жатыр...",
+    "chat_hint": "Сұрақ қой — кез келген тақырып бойынша көмектесемін"
+  },
+  "progress": {
+    "title": "Прогресс", "no_data": "Прогрессті көру үшін оқуды бастаңыз",
+    "subtitle": "Оқу статистикаңыз",
+    "stat_docs": "Құжаттар", "stat_summaries": "Конспекттер", "stat_flashcard_sets": "Карточка жиындары", "stat_exams": "Емтихандар",
+    "avg_score": "Орташа нәтиже", "last_attempts": "әрекетке", "recent": "Соңғы әрекеттер", "attempt": "Әрекет #",
+    "empty": "Әзірше бос", "empty_hint2": "Құжаттарды жүктеп, оқуды бастаңыз"
+  },
+  "settings": {
+    "title": "Баптаулар", "interface_lang": "Интерфейс тілі", "ai_lang": "AI жауап тілі", "sign_out": "Аккаунттан шығу"
+  }
 }

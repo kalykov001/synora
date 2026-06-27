@@ -1,22 +1,25 @@
 import { useState, useRef } from 'react'
 import {
-  FlatList, KeyboardAvoidingView, Platform, Pressable,
+  Alert, FlatList, KeyboardAvoidingView, Platform, Pressable,
   Text, TextInput, View, ActivityIndicator,
 } from 'react-native'
 import { useRouter } from 'expo-router'
+import { useTranslation } from 'react-i18next'
 import {
   useTutorSessions, useCreateTutorSession,
   useTutorMessages, useSendMessage,
 } from '../../../hooks/useTutor'
+import { useLimitCheck, FREE_LIMITS } from '../../../hooks/usePlan'
 import type { TutorSession } from '../../../types/database'
 
 export default function TutorScreen() {
+  const { t } = useTranslation()
   const [activeSession, setActiveSession] = useState<TutorSession | null>(null)
   const { data: sessions, isLoading } = useTutorSessions()
   const createSession = useCreateTutorSession()
 
   async function handleNewSession() {
-    const session = await createSession.mutateAsync({ title: 'Новый чат' })
+    const session = await createSession.mutateAsync({ title: t('tutor.new_chat') })
     setActiveSession(session)
   }
 
@@ -32,7 +35,7 @@ export default function TutorScreen() {
   return (
     <View className="flex-1 bg-surface">
       <View className="px-6 pt-16 pb-4 flex-row items-center justify-between">
-        <Text className="text-2xl font-bold text-white">AI Tutor</Text>
+        <Text className="text-2xl font-bold text-white">{t('tutor.title')}</Text>
         <Pressable
           onPress={handleNewSession}
           disabled={createSession.isPending}
@@ -40,7 +43,7 @@ export default function TutorScreen() {
         >
           {createSession.isPending
             ? <ActivityIndicator size="small" color="white" />
-            : <Text className="text-white font-semibold">+ Новый</Text>
+            : <Text className="text-white font-semibold">{t('tutor.new')}</Text>
           }
         </Pressable>
       </View>
@@ -52,12 +55,10 @@ export default function TutorScreen() {
       ) : !sessions?.length ? (
         <View className="flex-1 items-center justify-center px-6">
           <Text className="text-5xl mb-4">🤖</Text>
-          <Text className="text-white font-bold text-xl mb-2">AI Tutor</Text>
-          <Text className="text-gray-400 text-center mb-6">
-            Задавай вопросы по своим документам или любым темам
-          </Text>
+          <Text className="text-white font-bold text-xl mb-2">{t('tutor.title')}</Text>
+          <Text className="text-gray-400 text-center mb-6">{t('tutor.empty_hint')}</Text>
           <Pressable onPress={handleNewSession} className="bg-primary rounded-2xl px-8 py-4">
-            <Text className="text-white font-semibold">Начать чат</Text>
+            <Text className="text-white font-semibold">{t('tutor.new_chat')}</Text>
           </Pressable>
         </View>
       ) : (
@@ -72,7 +73,7 @@ export default function TutorScreen() {
             >
               <Text className="text-white font-semibold">{item.title}</Text>
               <Text className="text-gray-500 text-xs mt-1">
-                {new Date(item.updated_at).toLocaleDateString('ru-RU')}
+                {new Date(item.updated_at).toLocaleDateString()}
               </Text>
             </Pressable>
           )}
@@ -83,18 +84,46 @@ export default function TutorScreen() {
 }
 
 function ChatView({ session, onBack }: { session: TutorSession; onBack: () => void }) {
+  const { t } = useTranslation()
+  const router = useRouter()
   const { data: messages, isLoading } = useTutorMessages(session.id)
   const sendMessage = useSendMessage(session.id)
+  const { checkDailyTutorMessages } = useLimitCheck()
   const [input, setInput] = useState('')
+  const [pendingMessage, setPendingMessage] = useState('')
   const listRef = useRef<FlatList>(null)
 
   async function handleSend() {
     const text = input.trim()
     if (!text || sendMessage.isPending) return
+
+    const allowed = await checkDailyTutorMessages()
+    if (!allowed) {
+      Alert.alert(
+        t('plan.limit_hit'),
+        t('plan.limit_messages', { count: FREE_LIMITS.dailyTutorMessages }),
+        [
+          { text: t('common.cancel'), style: 'cancel' },
+          { text: t('plan.go_pro'), onPress: () => router.push('/(app)/upgrade' as any) },
+        ]
+      )
+      return
+    }
+
     setInput('')
-    await sendMessage.mutateAsync(text)
+    setPendingMessage(text)
+    try {
+      await sendMessage.mutateAsync(text)
+    } finally {
+      setPendingMessage('')
+    }
     setTimeout(() => listRef.current?.scrollToEnd({ animated: true }), 100)
   }
+
+  const displayMessages = [
+    ...(messages ?? []),
+    ...(pendingMessage ? [{ id: '__pending__', role: 'user' as const, content: pendingMessage, session_id: session.id, created_at: '' }] : []),
+  ]
 
   return (
     <KeyboardAvoidingView
@@ -118,14 +147,13 @@ function ChatView({ session, onBack }: { session: TutorSession; onBack: () => vo
       ) : (
         <FlatList
           ref={listRef}
-          data={messages ?? []}
+          data={displayMessages}
           keyExtractor={(m) => m.id}
           contentContainerStyle={{ padding: 16, paddingBottom: 8 }}
+          onContentSizeChange={() => listRef.current?.scrollToEnd({ animated: true })}
           ListEmptyComponent={
             <View className="flex-1 items-center justify-center py-20">
-              <Text className="text-gray-500 text-center">
-                Задай вопрос — я помогу с любой темой
-              </Text>
+              <Text className="text-gray-500 text-center">{t('tutor.chat_hint')}</Text>
             </View>
           }
           renderItem={({ item }) => (
@@ -143,11 +171,11 @@ function ChatView({ session, onBack }: { session: TutorSession; onBack: () => vo
         />
       )}
 
-      {/* Sending indicator */}
+      {/* AI typing indicator */}
       {sendMessage.isPending && (
-        <View className="flex-row items-center px-6 pb-2 gap-2">
+        <View className="flex-row items-center gap-2 px-6 py-2 bg-white/5 mx-4 mb-2 rounded-2xl self-start">
           <ActivityIndicator size="small" color="#6366f1" />
-          <Text className="text-gray-500 text-xs">AI отвечает...</Text>
+          <Text className="text-gray-400 text-xs">{t('tutor.typing')}</Text>
         </View>
       )}
 
@@ -157,7 +185,7 @@ function ChatView({ session, onBack }: { session: TutorSession; onBack: () => vo
           value={input}
           onChangeText={setInput}
           onSubmitEditing={handleSend}
-          placeholder="Спроси что-нибудь..."
+          placeholder={t('tutor.input_placeholder')}
           placeholderTextColor="#64748b"
           multiline
           maxLength={1000}

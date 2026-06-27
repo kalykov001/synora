@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "Chargement...", "error": "Une erreur s'est produite", "retry": "Réessayer", "cancel": "Annuler", "save": "Enregistrer", "delete": "Supprimer", "back": "Retour" },
+  "common": { "loading": "Chargement...", "error": "Une erreur s'est produite", "retry": "Réessayer", "cancel": "Annuler", "save": "Enregistrer", "delete": "Supprimer", "back": "← Retour" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "Apprentissage assisté par IA", "login_button": "Se connecter",
     "register_title": "Créer un compte", "register_subtitle": "Rejoindre Synora", "register_button": "S'inscrire",
@@ -9,8 +9,36 @@
     "password_min": "Le mot de passe doit contenir au moins 6 caractères"
   },
   "onboarding": { "title": "Choisir la langue", "subtitle": "Langue de l'interface et des réponses IA", "continue": "Continuer" },
-  "home": { "greeting": "Bonjour", "quick_access": "Accès rapide", "upload_pdf": "Télécharger PDF", "continue": "Continuer", "ai_tutor": "Tuteur IA", "flashcards": "Fiches", "exam": "Mode examen", "progress": "Progrès" },
-  "library": { "title": "Bibliothèque", "empty": "Aucun document", "empty_hint": "Téléchargez un PDF pour commencer" },
-  "tutor": { "title": "Tuteur IA", "placeholder": "Posez une question sur votre matière..." },
-  "progress": { "title": "Progrès", "no_data": "Commencez à apprendre pour voir vos progrès" }
+  "home": { "greeting": "Bonjour", "student": "Étudiant", "quick_access": "Accès rapide", "upload_pdf": "Télécharger PDF", "continue": "Continuer", "ai_tutor": "Tuteur IA", "flashcards": "Fiches", "exam": "Mode examen", "progress": "Progrès" },
+  "library": {
+    "title": "Bibliothèque", "empty": "Aucun document", "empty_hint": "Téléchargez un PDF pour commencer",
+    "empty_title": "Vide", "empty_hint2": "Téléchargez un PDF pour apprendre",
+    "status_uploading": "Envoi...", "status_processing": "IA en cours...", "status_ready": "Prêt", "status_error": "Erreur",
+    "pages": "p.", "delete_title": "Supprimer le document ?", "upload_error": "Erreur d'envoi"
+  },
+  "doc": {
+    "tab_summary": "Résumé", "tab_flashcards": "Fiches", "tab_exam": "Examen",
+    "processing": "Document en cours...",
+    "generating_summary": "L'IA génère un résumé...",
+    "no_summary": "Pas encore de résumé", "no_summary_hint": "L'IA va générer un résumé structuré",
+    "create_summary": "Créer un résumé",
+    "create_flashcards": "Créer des fiches", "new_set": "+ Nouveau jeu", "tap_to_study": "Appuyer pour étudier",
+    "create_exam": "Créer un examen", "new_exam": "+ Nouvel examen", "tap_to_start": "Appuyer pour commencer"
+  },
+  "tutor": {
+    "title": "Tuteur IA", "placeholder": "Posez une question sur votre matière...",
+    "new": "+ Nouveau", "new_chat": "Démarrer le chat", "empty_hint": "Posez des questions sur vos documents ou tout autre sujet",
+    "input_placeholder": "Posez une question...", "typing": "L'IA écrit...",
+    "chat_hint": "Posez une question — je vous aide sur tous les sujets"
+  },
+  "progress": {
+    "title": "Progrès", "no_data": "Commencez à apprendre pour voir vos progrès",
+    "subtitle": "Vos statistiques d'apprentissage",
+    "stat_docs": "Documents", "stat_summaries": "Résumés", "stat_flashcard_sets": "Jeux de fiches", "stat_exams": "Examens",
+    "avg_score": "Score moyen", "last_attempts": "tentatives", "recent": "Dernières tentatives", "attempt": "Tentative #",
+    "empty": "Rien encore", "empty_hint2": "Téléchargez des documents et commencez à apprendre"
+  },
+  "settings": {
+    "title": "Paramètres", "interface_lang": "Langue de l'interface", "ai_lang": "Langue des réponses IA", "sign_out": "Se déconnecter"
+  }
 }

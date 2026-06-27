@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router'
 import { Text } from 'react-native'
+import { useSettingsStore } from '../../stores/settingsStore'
 
 function TabIcon({ emoji, focused }: { emoji: string; focused: boolean }) {
   return (
@@ -7,7 +8,22 @@ function TabIcon({ emoji, focused }: { emoji: string; focused: boolean }) {
   )
 }
 
+const TAB_LABELS: Record<string, { home: string; library: string; progress: string; settings: string }> = {
+  ru: { home: 'Главная', library: 'Библиотека', progress: 'Прогресс', settings: 'Настройки' },
+  en: { home: 'Home', library: 'Library', progress: 'Progress', settings: 'Settings' },
+  ky: { home: 'Башкы', library: 'Китепкана', progress: 'Прогресс', settings: 'Жөндөөлөр' },
+  kz: { home: 'Басты', library: 'Кітапхана', progress: 'Прогресс', settings: 'Баптаулар' },
+  tr: { home: 'Ana Sayfa', library: 'Kütüphane', progress: 'İlerleme', settings: 'Ayarlar' },
+  de: { home: 'Start', library: 'Bibliothek', progress: 'Fortschritt', settings: 'Einstellungen' },
+  fr: { home: 'Accueil', library: 'Bibliothèque', progress: 'Progrès', settings: 'Paramètres' },
+  es: { home: 'Inicio', library: 'Biblioteca', progress: 'Progreso', settings: 'Ajustes' },
+  ar: { home: 'الرئيسية', library: 'المكتبة', progress: 'التقدم', settings: 'الإعدادات' },
+}
+
 export default function AppLayout() {
+  const language = useSettingsStore((s) => s.language)
+  const labels = TAB_LABELS[language] ?? TAB_LABELS.ru
+
   return (
     <Tabs
       screenOptions={{
@@ -28,14 +44,14 @@ export default function AppLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Главная',
+          title: labels.home,
           tabBarIcon: ({ focused }) => <TabIcon emoji="🏠" focused={focused} />,
         }}
       />
       <Tabs.Screen
         name="library"
         options={{
-          title: 'Библиотека',
+          title: labels.library,
           tabBarIcon: ({ focused }) => <TabIcon emoji="📚" focused={focused} />,
         }}
       />
@@ -49,11 +65,19 @@ export default function AppLayout() {
       <Tabs.Screen
         name="progress"
         options={{
-          title: 'Прогресс',
+          title: labels.progress,
           tabBarIcon: ({ focused }) => <TabIcon emoji="📊" focused={focused} />,
         }}
       />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: labels.settings,
+          tabBarIcon: ({ focused }) => <TabIcon emoji="⚙️" focused={focused} />,
+        }}
+      />
       <Tabs.Screen name="study" options={{ href: null }} />
+      <Tabs.Screen name="upgrade" options={{ href: null }} />
     </Tabs>
   )
 }

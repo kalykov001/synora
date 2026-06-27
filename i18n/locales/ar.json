@@ -1,5 +1,5 @@
 {
-  "common": { "loading": "جار التحميل...", "error": "حدث خطأ", "retry": "إعادة المحاولة", "cancel": "إلغاء", "save": "حفظ", "delete": "حذف", "back": "رجوع" },
+  "common": { "loading": "جار التحميل...", "error": "حدث خطأ", "retry": "إعادة المحاولة", "cancel": "إلغاء", "save": "حفظ", "delete": "حذف", "back": "← رجوع" },
   "auth": {
     "login_title": "Synora", "login_subtitle": "التعلم بالذكاء الاصطناعي", "login_button": "تسجيل الدخول",
     "register_title": "إنشاء حساب", "register_subtitle": "انضم إلى Synora", "register_button": "إنشاء حساب",
@@ -9,8 +9,36 @@
     "password_min": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل"
   },
   "onboarding": { "title": "اختر اللغة", "subtitle": "لغة الواجهة وردود الذكاء الاصطناعي", "continue": "متابعة" },
-  "home": { "greeting": "مرحباً", "quick_access": "وصول سريع", "upload_pdf": "رفع PDF", "continue": "متابعة", "ai_tutor": "المعلم الذكي", "flashcards": "البطاقات", "exam": "وضع الاختبار", "progress": "التقدم" },
-  "library": { "title": "المكتبة", "empty": "لا توجد مستندات", "empty_hint": "ارفع ملف PDF للبدء" },
-  "tutor": { "title": "المعلم الذكي", "placeholder": "اسأل عن المادة..." },
-  "progress": { "title": "التقدم", "no_data": "ابدأ التعلم لرؤية تقدمك" }
+  "home": { "greeting": "مرحباً", "student": "الطالب", "quick_access": "وصول سريع", "upload_pdf": "رفع PDF", "continue": "متابعة", "ai_tutor": "المعلم الذكي", "flashcards": "البطاقات", "exam": "وضع الاختبار", "progress": "التقدم" },
+  "library": {
+    "title": "المكتبة", "empty": "لا توجد مستندات", "empty_hint": "ارفع ملف PDF للبدء",
+    "empty_title": "فارغ", "empty_hint2": "ارفع ملف PDF لبدء التعلم",
+    "status_uploading": "جار الرفع...", "status_processing": "الذكاء الاصطناعي يعالج...", "status_ready": "جاهز", "status_error": "خطأ",
+    "pages": "ص.", "delete_title": "حذف المستند؟", "upload_error": "خطأ في الرفع"
+  },
+  "doc": {
+    "tab_summary": "ملخص", "tab_flashcards": "البطاقات", "tab_exam": "امتحان",
+    "processing": "جارٍ معالجة المستند...",
+    "generating_summary": "الذكاء الاصطناعي يُنشئ ملخصاً...",
+    "no_summary": "لا يوجد ملخص بعد", "no_summary_hint": "سيُنشئ الذكاء الاصطناعي ملخصاً منظماً",
+    "create_summary": "إنشاء ملخص",
+    "create_flashcards": "إنشاء بطاقات", "new_set": "+ مجموعة جديدة", "tap_to_study": "اضغط للدراسة",
+    "create_exam": "إنشاء امتحان", "new_exam": "+ امتحان جديد", "tap_to_start": "اضغط للبدء"
+  },
+  "tutor": {
+    "title": "المعلم الذكي", "placeholder": "اسأل عن المادة...",
+    "new": "+ جديد", "new_chat": "بدء المحادثة", "empty_hint": "اطرح أسئلة حول مستنداتك أو أي موضوع",
+    "input_placeholder": "اسأل شيئاً...", "typing": "الذكاء الاصطناعي يكتب...",
+    "chat_hint": "اطرح سؤالاً — سأساعدك في أي موضوع"
+  },
+  "progress": {
+    "title": "التقدم", "no_data": "ابدأ التعلم لرؤية تقدمك",
+    "subtitle": "إحصائيات تعلمك",
+    "stat_docs": "المستندات", "stat_summaries": "الملخصات", "stat_flashcard_sets": "مجموعات البطاقات", "stat_exams": "الامتحانات",
+    "avg_score": "متوسط النتيجة", "last_attempts": "محاولة", "recent": "آخر المحاولات", "attempt": "محاولة #",
+    "empty": "لا شيء بعد", "empty_hint2": "ارفع مستندات وابدأ التعلم"
+  },
+  "settings": {
+    "title": "الإعدادات", "interface_lang": "لغة الواجهة", "ai_lang": "لغة ردود الذكاء الاصطناعي", "sign_out": "تسجيل الخروج"
+  }
 }

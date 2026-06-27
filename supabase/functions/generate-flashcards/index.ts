@@ -41,21 +41,23 @@ Text:
 ${doc.extracted_text.slice(0, 25000)}`
 
     const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.4, maxOutputTokens: 4096 },
+          generationConfig: { temperature: 0.4, maxOutputTokens: 8192 },
         }),
       }
     )
 
     const geminiData = await geminiRes.json()
+    if (geminiData.error) throw new Error(`Gemini error: ${geminiData.error.message}`)
     const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
+    if (!rawText) throw new Error(`Gemini empty response, reason: ${geminiData.candidates?.[0]?.finishReason}`)
     const jsonMatch = rawText.match(/\[[\s\S]*\]/)
-    if (!jsonMatch) throw new Error('Failed to parse flashcards JSON')
+    if (!jsonMatch) throw new Error(`Failed to parse flashcards JSON. Raw: ${rawText.slice(0, 200)}`)
     const cards: { question: string; answer: string; difficulty: number }[] = JSON.parse(jsonMatch[0])
 
     // Create flashcard set

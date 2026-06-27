@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Alert, ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { Link } from 'expo-router'
 import { supabase } from '../../lib/supabase'
 import { Button, Input } from '../../components/ui'
@@ -9,21 +9,49 @@ export default function RegisterScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
 
   async function handleRegister() {
-    if (!name.trim() || !email.trim() || !password) return
+    setError('')
+    if (!name.trim() || !email.trim() || !password) {
+      setError('Заполни все поля')
+      return
+    }
     if (password.length < 6) {
-      Alert.alert('Ошибка', 'Пароль должен быть минимум 6 символов')
+      setError('Пароль должен быть минимум 6 символов')
       return
     }
     setLoading(true)
-    const { error } = await supabase.auth.signUp({
+    const { error: err } = await supabase.auth.signUp({
       email: email.trim(),
       password,
       options: { data: { full_name: name.trim() } },
     })
     setLoading(false)
-    if (error) Alert.alert('Ошибка регистрации', error.message)
+    if (err) {
+      setError(err.message)
+    } else {
+      setSuccess(true)
+    }
+  }
+
+  if (success) {
+    return (
+      <View className="flex-1 bg-surface items-center justify-center px-6">
+        <Text style={{ fontSize: 48 }}>📬</Text>
+        <Text className="text-white text-2xl font-bold mt-4 mb-2 text-center">
+          Проверь почту
+        </Text>
+        <Text className="text-gray-400 text-center mb-8">
+          Мы отправили письмо на {email}.{'\n'}
+          Перейди по ссылке в письме чтобы войти.
+        </Text>
+        <Link href="/(auth)/login" className="text-primary font-semibold text-base">
+          Вернуться ко входу
+        </Link>
+      </View>
+    )
   }
 
   return (
@@ -62,6 +90,9 @@ export default function RegisterScreen() {
             placeholder="Минимум 6 символов"
             secureTextEntry
           />
+          {!!error && (
+            <Text className="text-red-400 text-sm text-center">{error}</Text>
+          )}
           <Button
             label="Зарегистрироваться"
             onPress={handleRegister}

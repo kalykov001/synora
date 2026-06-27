@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { supabase } from '../lib/supabase'
+import { useSettingsStore } from '../stores/settingsStore'
 import type { TutorSession, TutorMessage } from '../types/database'
 
 export function useTutorSessions() {
@@ -36,9 +37,11 @@ export function useCreateTutorSession() {
   const qc = useQueryClient()
   return useMutation({
     mutationFn: async ({ title, documentId }: { title: string; documentId?: string }) => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) throw new Error('Not authenticated')
       const { data, error } = await supabase
         .from('tutor_sessions')
-        .insert({ title, document_id: documentId ?? null })
+        .insert({ title, document_id: documentId ?? null, user_id: user.id })
         .select()
         .single()
       if (error) throw error
@@ -50,10 +53,11 @@ export function useCreateTutorSession() {
 
 export function useSendMessage(sessionId: string) {
   const qc = useQueryClient()
+  const outputLanguage = useSettingsStore((s) => s.outputLanguage)
   return useMutation({
     mutationFn: async (message: string) => {
       const { data, error } = await supabase.functions.invoke('tutor-chat', {
-        body: { session_id: sessionId, message },
+        body: { session_id: sessionId, message, output_language: outputLanguage },
       })
       if (error) throw error
       return data

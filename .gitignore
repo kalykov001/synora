@@ -30,10 +30,6 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env.local
-.env*.local
-
 # typescript
 *.tsbuildinfo
 
@@ -43,3 +39,10 @@ yarn-error.*
 
 # Brainstorm artifacts
 .superpowers/
+
+
+# local env files
+.env
+.env.*
+.env.local
+.env*.local
